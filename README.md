@@ -13,7 +13,6 @@ SET time_zone = "+00:00";
 -- Base de données : `atlasdb`
 --
 
--- --------------------------------------------------------
 
 --
 -- Structure de la table `role`
@@ -33,7 +32,6 @@ INSERT INTO `role` (`name`) VALUES
 ('ROLE_ADMIN'),
 ('ROLE_CLIENT');
 
--- --------------------------------------------------------
 
 --
 -- Structure de la table `utilisateur`
@@ -57,7 +55,6 @@ INSERT INTO `utilisateur` (`phonenumber`, `code`, `name`, `role_name`) VALUES
 ('3334', '3', 'MED', 'ROLE_ADMIN'),
 ('4444', '5', 'ALI', 'ROLE_CLIENT')
 
--- --------------------------------------------------------
 
 --
 -- Structure de la table `utilisatuer`
