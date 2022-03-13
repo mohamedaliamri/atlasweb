@@ -10,6 +10,7 @@ SET time_zone = "+00:00";
 
 
 DROP TABLE IF EXISTS `role`;
+
 CREATE TABLE IF NOT EXISTS `role` (
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`name`)
@@ -25,6 +26,7 @@ INSERT INTO `role` (`name`) VALUES
 
 
 DROP TABLE IF EXISTS `utilisateur`;
+
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `phonenumber` varchar(256) NOT NULL,
   `code` varchar(256) DEFAULT NULL,
@@ -38,12 +40,13 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 
 INSERT INTO `utilisateur` (`phonenumber`, `code`, `name`, `role_name`) VALUES
 ('3334', '3', 'MED', 'ROLE_ADMIN'),
-('4444', '5', 'ALI', 'ROLE_CLIENT')
+('4444', '5', 'ALI', 'ROLE_CLIENT');
 
 
 
 
 DROP TABLE IF EXISTS `utilisatuer`;
+
 CREATE TABLE IF NOT EXISTS `utilisatuer` (
   `phonenumber` varchar(255) NOT NULL,
   `code` varchar(255) DEFAULT NULL,
