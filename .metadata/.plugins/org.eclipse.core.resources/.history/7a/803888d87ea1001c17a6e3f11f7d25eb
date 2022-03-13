@@ -1,0 +1,5 @@
+package atlasweb.model;
+
+public class Utilisateur {
+
+}

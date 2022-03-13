@@ -1,0 +1,8 @@
+package atlasweb.model;
+
+public class Role {
+	
+	private String name;
+	
+
+}

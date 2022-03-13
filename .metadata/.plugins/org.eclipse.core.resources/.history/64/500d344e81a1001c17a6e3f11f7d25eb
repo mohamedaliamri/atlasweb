@@ -1,0 +1,5 @@
+package atlasweb.conf;
+
+public class HibernateUtil {
+
+}
