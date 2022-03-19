@@ -21,14 +21,14 @@ public class SendSmsBasic {
 
     
 
-    public void sendSMS() throws IOException {
+    public void sendSMS(String phoneNumber, String code) throws IOException {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
  
         String bodyJson = String.format("{\"messages\":[{\"from\":\"%s\",\"destinations\":[{\"to\":\"%s\"}],\"text\":\"%s\"}]}",
                 SENDER,
-                RECIPIENT,
-                MESSAGE_TEXT
+                phoneNumber,
+                code
         );
  
         MediaType mediaType = MediaType.parse(MEDIA_TYPE);

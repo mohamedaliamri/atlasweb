@@ -1,0 +1,12 @@
+127.0.0.1 - - [19/Mar/2022:23:58:40 +0100] "GET / HTTP/1.1" 404 681
+0:0:0:0:0:0:0:1 - - [19/Mar/2022:23:59:38 +0100] "GET /atlasweb/material-dashboard-master/pages/sign-up.jsp HTTP/1.1" 200 4918
+0:0:0:0:0:0:0:1 - - [19/Mar/2022:23:59:38 +0100] "GET /atlasweb/material-dashboard-master/assets/css/nucleo-icons.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Mar/2022:23:59:38 +0100] "GET /atlasweb/material-dashboard-master/assets/css/nucleo-svg.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Mar/2022:23:59:38 +0100] "GET /atlasweb/material-dashboard-master/assets/js/core/popper.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Mar/2022:23:59:38 +0100] "GET /atlasweb/material-dashboard-master/assets/css/material-dashboard.css?v=3.0.1 HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Mar/2022:23:59:38 +0100] "GET /atlasweb/material-dashboard-master/assets/js/core/bootstrap.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Mar/2022:23:59:38 +0100] "GET /atlasweb/material-dashboard-master/assets/js/plugins/perfect-scrollbar.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Mar/2022:23:59:38 +0100] "GET /atlasweb/material-dashboard-master/assets/js/plugins/smooth-scrollbar.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Mar/2022:23:59:38 +0100] "GET /atlasweb/material-dashboard-master/assets/js/material-dashboard.min.js?v=3.0.1 HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Mar/2022:23:59:40 +0100] "GET /atlasweb/material-dashboard-master/assets/img/illustrations/illustration-signup.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [19/Mar/2022:23:59:40 +0100] "GET /atlasweb/material-dashboard-master/assets/img/favicon.png HTTP/1.1" 304 -

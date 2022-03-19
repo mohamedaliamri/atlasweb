@@ -14,7 +14,6 @@ import atlasweb.model.Utilisateur;
 public class HibernateUtil {
     private static SessionFactory sessionFactory;
     public static SessionFactory getSessionFactory() {
-    	System.out.println("Here");
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration();

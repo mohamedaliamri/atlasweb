@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import atlasweb.dao.RoleDao;
 import atlasweb.dao.UtilisateurDao;
@@ -23,6 +24,8 @@ public class UtilisateurServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private static final String url_login = "http://localhost:8080/atlasweb/material-dashboard-master/pages/sign-in.jsp";
+	private static final String url_acceuil = "http://localhost:8080/atlasweb/material-dashboard-master/pages/dashboard.html";
 	private UtilisateurDao userDao;
 	private RoleDao roleDao;
 
@@ -35,19 +38,45 @@ public class UtilisateurServlet extends HttpServlet {
     throws ServletException, IOException {
     	String name = request.getParameter("name");
     	String phoneNumber = request.getParameter("phonenumber");
-    	String method = request.getParameter("signup");
-    	if("true".equals(method)) {
+    	phoneNumber = "216".concat(phoneNumber);
+    	String code = generateCode(phoneNumber);
+    	String method = request.getParameter("method");
+    	HttpSession session = request.getSession();
+    	session.setAttribute("error_msg", null);
+    	if("signup".equals(method)) {
     		// méthode d'inscription
-    		System.out.println(">> "+name+"/ "+phoneNumber+"/ "+method);
     		Role role = roleDao.getRole("ROLE_CLIENT");
-    		Utilisateur utilisateur = new Utilisateur(phoneNumber, name, "AB"+phoneNumber+"CD", role);
+    		Utilisateur utilisateur = new Utilisateur(phoneNumber, name, code, role);
     		userDao.saveUser(utilisateur);
+    		response.sendRedirect(url_login);  
+    	}else if("signin".equals(method)) {
+    		//méthode de connexion
+    		Utilisateur utilisateur = userDao.getUser(phoneNumber);
+    		if(utilisateur != null && utilisateur.getCode().equals(code)) {
+    			System.out.println(" // page acceuil");
+    			response.sendRedirect(url_acceuil);  
+    		}else {
+    			System.out.println("// page authentification");
+    		//	String error_msg = (String)request.getAttribute("error_msg");
+    			session.setAttribute("error_msg", "error");
+    			response.sendRedirect(url_login);  
+    		}
     	}
-    	response.sendRedirect("http://localhost:8080/atlasweb/material-dashboard-master/pages/sign-in.html");  
-   //     doGet(request, response);
+    	
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    private String generateCode(String phoneNumber) {
+    	String code = "";
+		try {
+			code = phoneNumber.substring(2,5);
+			code = code + phoneNumber.substring(0,2) + code.substring(1,2);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return code;
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         String action = request.getServletPath();
         System.out.println("Action = "+action);

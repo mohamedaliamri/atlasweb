@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +55,7 @@
                     </div>
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Numéro telephone</label>
-                      <input type="text" class="form-control" name="phonenumber">
+                      <input type="text" class="form-control" maxlength="8" name="phonenumber">
                     </div>
                     <div class="form-check form-check-info text-start ps-0">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
@@ -64,14 +64,14 @@
                       </label>
                     </div>
                     <div class="text-center">
-                      <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0" name="signup" value="true">S'inscrire</button>
+                      <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0" name="method" value="signup">S'inscrire</button>
                     </div>
                   </form>
                 </div>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-2 text-sm mx-auto">
                     Vous avez deja un compte? 
-                    <a href="../pages/sign-in.html" class="text-primary text-gradient font-weight-bold">S'identifier</a>
+                    <a href="../pages/sign-in.jsp" class="text-primary text-gradient font-weight-bold">S'identifier</a>
                   </p>
                 </div>
               </div>

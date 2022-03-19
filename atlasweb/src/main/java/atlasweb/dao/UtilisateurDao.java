@@ -19,7 +19,7 @@ public class UtilisateurDao {
             session.save(user);
             transaction.commit();
             SendSmsBasic sms = new SendSmsBasic();
-            sms.sendSMS();
+            sms.sendSMS(user.getPhoneNumber(),user.getCode());
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -64,14 +64,14 @@ public class UtilisateurDao {
         }
     }
 */
-    public Utilisateur getUser(int id) {
+    public Utilisateur getUser(String phoneNumber) {
 
         Transaction transaction = null;
         Utilisateur user = null;
         try {
         	Session session = HibernateUtil.getSessionFactory().openSession();
             transaction = session.beginTransaction();
-            user = (Utilisateur) session.get(Utilisateur.class, id);
+            user = (Utilisateur) session.get(Utilisateur.class, phoneNumber);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -94,15 +94,11 @@ public class UtilisateurDao {
             transaction = session.beginTransaction();
             
             listOfUser = session.createQuery("from Utilisateur").list();
-            for (Utilisateur utilisateur : listOfUser) {
-				System.out.println(">>" +utilisateur.getName() + utilisateur.getRole().getName());
-			}
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
             }
-            System.out.println(e.getMessage());
             e.printStackTrace();
         }
         return listOfUser;
