@@ -17,15 +17,13 @@ import atlasweb.dao.UtilisateurDao;
 import atlasweb.model.Role;
 import atlasweb.model.Utilisateur;
 
-@WebServlet(name ="abc")
+@WebServlet(name ="utilisateurServlet")
 public class UtilisateurServlet extends HttpServlet {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-	private static final String url_login = "http://localhost:8080/atlasweb/material-dashboard-master/pages/sign-in.jsp";
-	private static final String url_acceuil = "http://localhost:8080/atlasweb/material-dashboard-master/pages/dashboard.jsp";
+	private static final String url_app ="http://localhost:8080/atlasweb/material-dashboard-master/pages";
+	private static final String url_login = url_app + "/sign-in.jsp";
+	private static final String url_acceuil = url_app + "/dashboard.jsp";
 	private UtilisateurDao userDao;
 	private RoleDao roleDao;
 

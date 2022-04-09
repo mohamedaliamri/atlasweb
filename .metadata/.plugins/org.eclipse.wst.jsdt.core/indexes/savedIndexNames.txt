@@ -2,7 +2,6 @@ INDEX VERSION 1.4+C:\Users\mhdal\workspace\.metadata\.plugins\org.eclipse.wst.js
 3889689542.index
 1070173548.index
 448242365.index
-1047498044.index
 3088197568.index
 3889689542.index
 1104626920.index
