@@ -25,7 +25,7 @@ public class UtilisateurServlet extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 	private static final String url_login = "http://localhost:8080/atlasweb/material-dashboard-master/pages/sign-in.jsp";
-	private static final String url_acceuil = "http://localhost:8080/atlasweb/material-dashboard-master/pages/dashboard.html";
+	private static final String url_acceuil = "http://localhost:8080/atlasweb/material-dashboard-master/pages/dashboard.jsp";
 	private UtilisateurDao userDao;
 	private RoleDao roleDao;
 
@@ -38,7 +38,7 @@ public class UtilisateurServlet extends HttpServlet {
     throws ServletException, IOException {
     	String name = request.getParameter("name");
     	String phoneNumber = request.getParameter("phonenumber");
-    	phoneNumber = "216".concat(phoneNumber);
+    	//phoneNumber = "216".concat(phoneNumber);
     	String code = generateCode(phoneNumber);
     	String method = request.getParameter("method");
     	HttpSession session = request.getSession();
@@ -50,15 +50,16 @@ public class UtilisateurServlet extends HttpServlet {
     		userDao.saveUser(utilisateur);
     		response.sendRedirect(url_login);  
     	}else if("signin".equals(method)) {
-    		//méthode de connexion
+    		//Authentification ok
     		Utilisateur utilisateur = userDao.getUser(phoneNumber);
-    		if(utilisateur != null && utilisateur.getCode().equals(code)) {
-    			System.out.println(" // page acceuil");
+    		String codeCnx = request.getParameter("codeCnx");
+    		System.out.println(utilisateur.getCode());
+    		System.out.println(codeCnx);
+    		if(utilisateur != null && utilisateur.getCode().equals(codeCnx)) {
     			response.sendRedirect(url_acceuil);  
     		}else {
-    			System.out.println("// page authentification");
-    		//	String error_msg = (String)request.getAttribute("error_msg");
-    			session.setAttribute("error_msg", "error");
+    			//Authentification
+    			session.setAttribute("error_msg", "Code incorrect");
     			response.sendRedirect(url_login);  
     		}
     	}
@@ -79,11 +80,8 @@ public class UtilisateurServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         String action = request.getServletPath();
-        System.out.println("Action = "+action);
         List < Utilisateur > listUser = userDao.getAllUser();
         listUser.forEach(obj -> {
-        	System.out.println(obj.getPhoneNumber());
-        	System.out.println(obj.getName());
         	System.out.println(obj.getRole());});
         /*     try {
             switch (action) {

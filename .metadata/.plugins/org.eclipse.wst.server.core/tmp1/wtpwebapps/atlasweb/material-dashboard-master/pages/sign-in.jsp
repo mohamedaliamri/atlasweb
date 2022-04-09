@@ -65,11 +65,11 @@
                   <form role="form" method="post" action="http://localhost:8080/atlasweb/add">
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label">Numéro téléphone</label>
-                    <input type="text" class="form-control" maxlength="8" name="phonenumber">
+                    <input type="text" class="form-control"  name="phonenumber">
                   </div>
                   <div class="input-group input-group-outline mb-3">
                     <label class="form-label">Code</label>
-                    <input type="password" class="form-control" name="code">
+                    <input type="password" class="form-control" name="codeCnx">
                   </div>
                   <div class="form-check form-switch d-flex align-items-center mb-3">
                     <input class="form-check-input" type="checkbox" id="rememberMe">

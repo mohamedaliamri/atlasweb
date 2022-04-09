@@ -72,6 +72,7 @@ public class UtilisateurDao {
         	Session session = HibernateUtil.getSessionFactory().openSession();
             transaction = session.beginTransaction();
             user = (Utilisateur) session.get(Utilisateur.class, phoneNumber);
+            System.out.println("Phone Number "+phoneNumber);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {

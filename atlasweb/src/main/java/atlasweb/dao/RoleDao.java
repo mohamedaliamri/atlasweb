@@ -5,7 +5,6 @@ import org.hibernate.Transaction;
 
 import atlasweb.conf.HibernateUtil;
 import atlasweb.model.Role;
-import atlasweb.model.Utilisateur;
 
 public class RoleDao {
 
