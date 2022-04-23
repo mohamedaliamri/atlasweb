@@ -1,0 +1,8 @@
+package atlasweb.model;
+
+public class Jeux {
+
+	private String nomJeux;
+	private String couleur;
+	private double prix;
+}

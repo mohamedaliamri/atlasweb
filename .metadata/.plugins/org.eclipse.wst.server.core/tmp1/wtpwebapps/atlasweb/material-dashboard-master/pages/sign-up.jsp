@@ -39,7 +39,7 @@
         <div class="container">
           <div class="row">
             <div class="col-7 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
-              <div id="gradient" class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center" style="background-image: url('../assets/img/illustrations/signup3.jpg'); background-size: cover;">
+              <div id="gradient" class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center" style="background-image: url('../assets/img/illustrations/signup.jpg'); background-size: cover;">
               </div>
             </div>
             <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
@@ -56,7 +56,7 @@
                     </div>
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Numéro telephone</label>
-                      <input type="text" class="form-control" maxlength="8" name="phonenumber">
+                      <input type="text" class="form-control"  name="phonenumber">
                     </div>
                     <div class="form-check form-check-info text-start ps-0">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>

@@ -16,6 +16,7 @@
 <!-- Nucleo Icons -->
 <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
 <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+<link href="../assets/css/dash.css" rel="stylesheet" />
 <!-- Font Awesome Icons -->
 <script src="https://kit.fontawesome.com/42d5adcbca.js"
 	crossorigin="anonymous"></script>
@@ -124,21 +125,227 @@
 								Quel type de bracelet veux-tu acheter?</h6>
 						</div>
 							<div class="card-body">
-							<div class="row">
-								<div class="form-check ps-12 col-lg-6">
-									<input class="form-check-input" type="radio"
-										name="flexRadioDefault" id="flexRadioDefault1"> <label
-										class="form-check-label" for="flexRadioDefault1"> - 1
-										mètre </label>
+								<div class="row">
+									<div class="form-check ps-12 col-lg-6">
+										<input class="form-check-input" type="radio"
+											name="flexRadioDefault" id="flexRadioDefault1"
+											onclick="myFunction('1')">
+										<label class="form-check-label" for="flexRadioDefault1">
+											- 1 mètre </label>
+									</div>
+									<div class="form-check ps-0 col-lg-6">
+										<input class="form-check-input" type="radio"
+											name="flexRadioDefault" id="flexRadioDefault2"
+											onclick="myFunction('2')"
+											> <label class="form-check-label"
+											for="flexRadioDefault2"> + 1 mètre </label>
+									</div>
 								</div>
-								<div class="form-check ps-0 col-lg-6">
-									<input class="form-check-input" type="radio"
-										name="flexRadioDefault" id="flexRadioDefault2" checked>
-									<label class="form-check-label" for="flexRadioDefault2">
-										+ 1 mètre </label>
+								<div class="row" id="parc" style="display:none">
+								<h6>PARCS :</h6>
+								<div id="jeux">
+								 <div id="1" style="display:none">
+								 <div class="form-check">
+								   <input class="form-check-input" type="checkbox" id="bleu1" 
+								   name="bleu1" onchange="statecheck('bleu1')">
+								   
+     	 							<label for="bleu1" id="bleu1l" class="label info">&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font
+     	 							 face="Georgia, Arial" >Le parc bleu</font>&ensp;
+     	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<label class="label other">
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;<font size="3" face="Georgia, Arial"
+     	 							 color="maroon">10</font><sup>Dt</sup>&ensp;&ensp;
+     	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 						 	</label>
+     	 						 </div>
+     	 						 <div class="form-check">
+								<input class="form-check-input" type="checkbox" 
+								onclick="getNoteJaune1()" onchange="statecheck('jaune1')"
+								id="jaune1" name="jaune1">
+     	 							<label for="jaune1"
+     	 							class="label yellow" id="jaune1l">&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;<font face="Georgia, Arial" >Le parc jaune </font>&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;</label>	
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<label class="label other">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font size="3" face="Georgia, Arial" color="maroon">10</font><sup>Dt</sup>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
+     	 							<span id="demo" style="display:none">
+     	 							Les enfants de moins 1 mètre ne peuvent jouer que dans la Toddler Zone</span>
+								 </div>
+								 <div class="form-check">
+								 <input class="form-check-input" type="checkbox" id="vert1" 
+								 name="vert1" onchange="statecheck('vert1')">
+     	 							<label class="label success" for="vert1" id="vert1l">&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<font face="Georgia, Arial" >Le parc vert</font>&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<label class="label other">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font size="3" face="Georgia, Arial" 
+     	 							color="maroon">10</font><sup>Dt</sup>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;</label>
+								 </div> 
+
+								 </div>
+								 <div id = "2"  style="display:none">
+								 <div class="form-check">
+								   <input class="form-check-input" type="checkbox" id="bleu2" 
+								   name="bleu2" onchange="statecheck('bleu2')">
+								   
+     	 							<label for="bleu2" id="bleu2l" class="label info">&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<font face="Georgia, Arial" >Le parc bleu</font>&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<label class="label other">
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;<font size="3" face="Georgia, Arial" 
+     	 							color="maroon">10</font><sup>Dt</sup>&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 						 	</label>
+     	 						 </div>
+     	 						 <div class="form-check">
+								<input class="form-check-input" type="checkbox" 
+								onclick="getNoteJaune2()" onchange="statecheck('jaune2')"
+								id="jaune2" name="jaune2">
+     	 							<label for="jaune2"
+     	 							class="label yellow" id="jaune1l">&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;<font face="Georgia, Arial" >Le parc jaune </font>&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;</label>	
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<label class="label other">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font size="3"
+     	 							 face="Georgia, Arial" color="maroon">10</font><sup>Dt</sup>
+     	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
+     	 							<span id="demo" style="display:none">
+     	 							Les enfants de moins 1 mètre ne peuvent jouer que dans la Toddler Zone</span>
+								 </div>
+								 <div class="form-check">
+								 <input class="form-check-input" type="checkbox" id="vert2" 
+								 name="vert2" onchange="statecheck('vert2')">
+     	 							<label class="label success" for="vert2" id="vert2l">&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font face="Georgia, Arial" >Le parc vert</font>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<label class="label other">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font size="3"
+     	 							 face="Georgia, Arial" color="maroon">10</font><sup>Dt</sup>
+     	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
+								 </div> 
+								  <div class="form-check">
+								 <input class="form-check-input" type="checkbox" id="rouge2" 
+								 name="rouge2" onchange="statecheck('rouge2')">
+     	 							<label class="label danger" for="rouge2" id="rouge2l">&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<font face="Georgia, Arial" >Le parc rouge</font>&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;</label>
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<label class="label other">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<font size="3" face="Georgia, Arial" color="maroon">10</font><sup>Dt</sup>
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
+								 </div> 
+     	 						<div class="form-check">
+								 <input class="form-check-input" type="checkbox" id="orange2" 
+								 name="orange2" onchange="statecheck('orange2')">
+     	 							<label class="label warning" for="orange2" id="orange2l">&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<font face="Georgia, Arial" >Le parc orange</font>&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;</label>
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<label class="label other">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font size="3" 
+     	 							face="Georgia, Arial" color="maroon">10</font><sup>Dt</sup>
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
+								 </div> 
+     	 					
+								 </div>
+								 </div>
 								</div>
+								<div class="row" id="chaussette"  style="display:none">
+								<h6>Chaussette:</h6>
+								<p><font size="3"> (Chaussette obligatoire pour tous types de jeux)</font></p>
+								<div id="chaussete">
+								 <div id="c1" style="display:none">
+								 <div class="form-check">
+								   <input class="form-check-input" type="radio"
+											name="flexRadioDefault" id="flexRadioDefault11" id="xOui" 
+								   name="xOui">
+								   
+     	 							<label for="xOui" id="xOuil" class="label other">&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font
+     	 							 face="Georgia, Arial" >Non</font>&ensp;
+     	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<label class="label other">
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;<font size="3" face="Georgia, Arial"
+     	 							 color="maroon">5</font><sup>Dt</sup>&ensp;&ensp;
+     	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 						 	</label>
+     	 						 </div>
+     	 						 <div class="form-check">
+								<input class="form-check-input" type="radio"
+											name="flexRadioDefault" id="flexRadioDefault12"
+								
+								id="xNon" name="xNon">
+     	 							<label for="xNon"
+     	 							class="label other" id="jaune1l">&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;<font face="Georgia, Arial" >Oui</font>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;</label>	
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							<label class="label other">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font size="3" 
+     	 							face="Georgia, Arial" color="maroon">O</font><sup>Dt</sup>
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
+     	 							
+								 </div>
+								 
+
+								 </div>
+								 
+								 </div>
 								</div>
-						</div></div>
+							</div>
+						</div>
+						<br/>
+						<br/>
+						<div id="access" style="display:none">
+						<center><img src="../assets/img/horloge.png" class="fit-picture"> <p><font size="7" 
+     	 					face="Georgia, Arial" color="maroon">L'</font><font size="4" 
+     	 					face="Georgia, Arial" color="black">accés aux parcs n'est pas limité dans le temps
+						</p></center>
+						</div>
 						<div class="text-center">
 							<button type="submit"
 								class="btn btn-lg bg-gradient-primary btn-lg  mt-4 mb-4"
@@ -543,6 +750,76 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
+  <script>
+	function myFunction(idMetre) {
+		if(idMetre === "1"){
+			document.getElementById('1').style.display ='block';
+			document.getElementById('2').style.display ='none';
+			document.getElementById('parc').style.display ='block';
+			document.getElementById('chaussette').style.display ='block';
+			document.getElementById('access').style.display ='block';
+			console.log("here");
+			
+		}else if(idMetre === "2"){
+			document.getElementById('2').style.display ='block';
+			document.getElementById('1').style.display ='none';
+			document.getElementById('parc').style.display ='block';
+			document.getElementById('chaussette').style.display ='block';
+			document.getElementById('access').style.display ='block';
+
+		}else if(idMetre === "c1"){
+			if(document.getElementById("jaune1").checked || document.getElementById("bleu1").checked 
+					||document.getElementById("vert1").checked ){
+			document.getElementById('c1').style.display ='block';}
+		}
+  		
+	}
+  </script>
+  <script>
+	function getNoteJaune1(text) {
+		if(document.getElementById("jaune1").checked){
+			document.getElementById('demo').style.display ='block';
+		    document.getElementById("demo").style.color = "red";
+		}else{
+			document.getElementById('demo').style.display ='none';
+		}
+		
+	}
+</script>
+<script>
+	function statecheck() {
+	if(document.getElementById("bleu1").checked){
+			document.getElementById("bleu1").style.backgroundColor = "blue";
+		//	document.getElementById("bleu1l").style.backgroundColor = "blue";
+			
+	}else if(!document.getElementById("bleu1").checked){
+		document.getElementById("bleu1").style.backgroundColor = "#eee";
+		//	document.getElementById("bleu1l").style.backgroundColor = "#eee";
+	}
+	if(document.getElementById("vert1").checked){
+		document.getElementById("vert1").style.backgroundColor = "green";
+		//document.getElementById("vert1l").style.backgroundColor = "green";
+	}
+	else if(!document.getElementById("vert1").checked){
+		document.getElementById("vert1").style.backgroundColor = "#eee";
+		//	document.getElementById("vert1l").style.backgroundColor = "#eee";
+	}
+	if(document.getElementById("jaune1").checked){
+		document.getElementById("jaune1").style.backgroundColor = "yellow";
+		//	document.getElementById("jaune1l").style.backgroundColor = "yellow";
+	}
+	else if(!document.getElementById("jaune1").checked){
+		document.getElementById("jaune1").style.backgroundColor = "#eee";
+		//	document.getElementById("jaune1l").style.backgroundColor = "#eee";
+	}
+	if(document.getElementById("jaune1").checked || document.getElementById("bleu1").checked 
+			||document.getElementById("vert1").checked ){
+	document.getElementById('c1').style.display ='block';}
+	else{
+		document.getElementById('c1').style.display ='none';
+	}
+	
+}</script>
 	<!-- Github buttons -->
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->

@@ -1,5 +1,5 @@
 #gradient {
   border: 5px solid;
-  border-image: linear-gradient(red, yellow) 100;
-  padding: 200px;
+  border-image: linear-gradient(red, yellow) 10;
+  padding: 20px;
 }
