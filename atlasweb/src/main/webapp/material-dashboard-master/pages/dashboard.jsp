@@ -13,18 +13,14 @@
 <!--     Fonts and icons     -->
 <link rel="stylesheet" type="text/css"
 	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-<!-- Nucleo Icons -->
 <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
 <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
 <link href="../assets/css/dash.css" rel="stylesheet" />
-<!-- Font Awesome Icons -->
 <script src="https://kit.fontawesome.com/42d5adcbca.js"
 	crossorigin="anonymous"></script>
-<!-- Material Icons -->
 <link
 	href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
 	rel="stylesheet">
-<!-- CSS Files -->
 <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.1"
 	rel="stylesheet" />
 </head>
@@ -97,6 +93,7 @@
 
 			<div class="row mb-12">
 				<div class="col-lg-12 col-md-12">
+				 <form role="form" method="post" action="http://localhost:8080/atlasweb/add">
 					<div class="card h-100">
 						<div class="card-header pb-0">
 							<h6>Quel est le prénom de l'enfant et sa naissance?</h6>
@@ -135,7 +132,7 @@
 									</div>
 									<div class="form-check ps-0 col-lg-6">
 										<input class="form-check-input" type="radio"
-											name="flexRadioDefault" id="flexRadioDefault2"
+											name="flexRadioDefault2" id="flexRadioDefault2"
 											onclick="myFunction('2')"
 											> <label class="form-check-label"
 											for="flexRadioDefault2"> + 1 mètre </label>
@@ -189,7 +186,7 @@
      	 							<font face="Georgia, Arial" >Le parc vert</font>&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
-     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							<label class="label other">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font size="3" face="Georgia, Arial" 
      	 							color="maroon">10</font><sup>Dt</sup>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
@@ -208,7 +205,7 @@
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							<font face="Georgia, Arial" >Le parc bleu</font>&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							<label class="label other">
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
@@ -227,11 +224,11 @@
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							&ensp;<font face="Georgia, Arial" >Le parc jaune </font>&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-     	 							&ensp;&ensp;&ensp;&ensp;&ensp;</label>	
+     	 							&ensp;&ensp;&ensp;&ensp;</label>	
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							<label class="label other">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font size="3"
-     	 							 face="Georgia, Arial" color="maroon">10</font><sup>Dt</sup>
+     	 							 face="Georgia, Arial" color="maroon">14</font><sup>Dt</sup>
      	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
      	 							<span id="demo" style="display:none">
@@ -246,7 +243,7 @@
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							<label class="label other">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font size="3"
-     	 							 face="Georgia, Arial" color="maroon">10</font><sup>Dt</sup>
+     	 							 face="Georgia, Arial" color="maroon">14</font><sup>Dt</sup>
      	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
 								 </div> 
@@ -262,7 +259,7 @@
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							<label class="label other">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-     	 							<font size="3" face="Georgia, Arial" color="maroon">10</font><sup>Dt</sup>
+     	 							<font size="3" face="Georgia, Arial" color="maroon">20</font><sup>Dt</sup>
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
 								 </div> 
@@ -293,16 +290,16 @@
 								 <div id="c1" style="display:none">
 								 <div class="form-check">
 								   <input class="form-check-input" type="radio"
-											name="flexRadioDefault" id="flexRadioDefault11" id="xOui" 
-								   name="xOui">
+											name="flexRadioDefaultT" id="flexRadioDefault11" id="xNon" 
+								   name="xNon">
 								   
-     	 							<label for="xOui" id="xOuil" class="label other">&ensp;&ensp;
+     	 							<label for="xNon" id="xNonl" class="label other">&ensp;&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font
-     	 							 face="Georgia, Arial" >Non</font>&ensp;
+     	 							 face="Georgia, Arial" >Non</font>&ensp;&ensp;&ensp;
      	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>
-     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							<label class="label other">
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							&ensp;&ensp;&ensp;<font size="3" face="Georgia, Arial"
@@ -313,16 +310,16 @@
      	 						 </div>
      	 						 <div class="form-check">
 								<input class="form-check-input" type="radio"
-											name="flexRadioDefault" id="flexRadioDefault12"
+											name="flexRadioDefaultT2" id="flexRadioDefault12"
 								
-								id="xNon" name="xNon">
-     	 							<label for="xNon"
-     	 							class="label other" id="jaune1l">&ensp;&ensp;&ensp;
+								id="xOui" name="xOui">
+     	 							<label for="xOui"
+     	 							class="label other" id="xOuil">&ensp;&ensp;&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							&ensp;<font face="Georgia, Arial" >Oui</font>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-     	 							&ensp;&ensp;&ensp;&ensp;</label>	
-     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</label>	
+     	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							<label class="label other">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
      	 							&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<font size="3" 
      	 							face="Georgia, Arial" color="maroon">O</font><sup>Dt</sup>
@@ -349,10 +346,11 @@
 						<div class="text-center">
 							<button type="submit"
 								class="btn btn-lg bg-gradient-primary btn-lg  mt-4 mb-4"
-								name="method" value="signup">Valider</button>
+								name="method" value="acheterBracelet">Valider</button>
 						</div>
 
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -768,9 +766,12 @@
 			document.getElementById('access').style.display ='block';
 
 		}else if(idMetre === "c1"){
+			console.log("Here 2");
 			if(document.getElementById("jaune1").checked || document.getElementById("bleu1").checked 
 					||document.getElementById("vert1").checked ){
-			document.getElementById('c1').style.display ='block';}
+			document.getElementById('c1').style.display ='block';
+			}
+			
 		}
   		
 	}
@@ -790,31 +791,49 @@
 	function statecheck() {
 	if(document.getElementById("bleu1").checked){
 			document.getElementById("bleu1").style.backgroundColor = "blue";
-		//	document.getElementById("bleu1l").style.backgroundColor = "blue";
 			
 	}else if(!document.getElementById("bleu1").checked){
 		document.getElementById("bleu1").style.backgroundColor = "#eee";
-		//	document.getElementById("bleu1l").style.backgroundColor = "#eee";
+	}
+	if(document.getElementById("bleu2").checked){
+		document.getElementById("bleu2").style.backgroundColor = "blue";
+		
+	}else if(!document.getElementById("bleu2").checked){
+		document.getElementById("bleu2").style.backgroundColor = "#eee";
 	}
 	if(document.getElementById("vert1").checked){
 		document.getElementById("vert1").style.backgroundColor = "green";
-		//document.getElementById("vert1l").style.backgroundColor = "green";
 	}
 	else if(!document.getElementById("vert1").checked){
 		document.getElementById("vert1").style.backgroundColor = "#eee";
-		//	document.getElementById("vert1l").style.backgroundColor = "#eee";
+	}
+	if(document.getElementById("vert2").checked){
+		document.getElementById("vert2").style.backgroundColor = "green";
+	}
+	else if(!document.getElementById("vert2").checked){
+		document.getElementById("vert2").style.backgroundColor = "#eee";
 	}
 	if(document.getElementById("jaune1").checked){
 		document.getElementById("jaune1").style.backgroundColor = "yellow";
-		//	document.getElementById("jaune1l").style.backgroundColor = "yellow";
 	}
 	else if(!document.getElementById("jaune1").checked){
 		document.getElementById("jaune1").style.backgroundColor = "#eee";
-		//	document.getElementById("jaune1l").style.backgroundColor = "#eee";
+	}
+	if(document.getElementById("jaune2").checked){
+		document.getElementById("jaune2").style.backgroundColor = "yellow";
+	}
+	else if(!document.getElementById("jaune2").checked){
+		document.getElementById("jaune2").style.backgroundColor = "#eee";
 	}
 	if(document.getElementById("jaune1").checked || document.getElementById("bleu1").checked 
 			||document.getElementById("vert1").checked ){
 	document.getElementById('c1').style.display ='block';}
+	else if(document.getElementById("jaune2").checked || 
+			document.getElementById("bleu2").checked 
+			||document.getElementById("vert2").checked 
+			||document.getElementById("orange2").checked){
+		
+		document.getElementById('c1').style.display ='block';}
 	else{
 		document.getElementById('c1').style.display ='none';
 	}

@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [10/Apr/2022:00:08:42 +0200] "POST /atlasweb/add HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [10/Apr/2022:00:08:42 +0200] "GET /atlasweb/material-dashboard-master/pages/sign-in.jsp HTTP/1.1" 200 7078
+0:0:0:0:0:0:0:1 - - [10/Apr/2022:00:08:50 +0200] "GET /atlasweb/material-dashboard-master/pages/sign-in.jsp HTTP/1.1" 200 7078
+0:0:0:0:0:0:0:1 - - [10/Apr/2022:00:08:56 +0200] "POST /atlasweb/add HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [10/Apr/2022:00:08:56 +0200] "GET /atlasweb/material-dashboard-master/pages/sign-in.jsp HTTP/1.1" 200 7078
+0:0:0:0:0:0:0:1 - - [10/Apr/2022:00:14:31 +0200] "GET /atlasweb/material-dashboard-master/pages/sign-in.jsp HTTP/1.1" 200 7078
+0:0:0:0:0:0:0:1 - - [10/Apr/2022:00:14:39 +0200] "GET /atlasweb/material-dashboard-master/pages/sign-up.jsp HTTP/1.1" 200 4981
+0:0:0:0:0:0:0:1 - - [10/Apr/2022:00:14:39 +0200] "GET /atlasweb/material-dashboard-master/assets/css/signup.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [10/Apr/2022:00:14:39 +0200] "GET /atlasweb/material-dashboard-master/assets/img/illustrations/signup.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [10/Apr/2022:00:14:50 +0200] "GET /atlasweb/material-dashboard-master/pages/dashboard.jsp HTTP/1.1" 200 19126

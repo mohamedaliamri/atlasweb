@@ -1,0 +1,44 @@
+package atlasweb.model;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+public class Jeux {
+
+	@Id
+	@Column(name = "nom")
+	private String nomJeux;
+	
+	@Column(name = "couleur")
+	private String couleur;
+	
+	@Column(name = "prix")
+	private double prix;
+
+	public String getNomJeux() {
+		return nomJeux;
+	}
+
+	public void setNomJeux(String nomJeux) {
+		this.nomJeux = nomJeux;
+	}
+
+	public String getCouleur() {
+		return couleur;
+	}
+
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
+
+	public double getPrix() {
+		return prix;
+	}
+
+	public void setPrix(double prix) {
+		this.prix = prix;
+	}
+	
+	
+
+}

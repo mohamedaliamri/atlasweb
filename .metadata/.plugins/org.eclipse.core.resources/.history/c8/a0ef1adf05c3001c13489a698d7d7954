@@ -1,0 +1,20 @@
+package atlasweb.model;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+public class Jeux {
+	
+	@Id
+    @GeneratedValue
+    @Column(name = "JEUX_ID")
+    private long id;
+ 
+    @Column(name = "NAME")
+    private String name;
+    
+    @Column(name = "PRIX")
+    private String prix;
+
+}
