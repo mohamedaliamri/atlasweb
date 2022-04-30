@@ -1,0 +1,5 @@
+package atlasweb.dao;
+
+public class JeuxDao {
+
+}

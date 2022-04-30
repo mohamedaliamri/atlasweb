@@ -1,10 +1,13 @@
 package atlasweb.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +27,10 @@ public class Utilisateur {
 	@ManyToOne
 	@JoinColumn(name = "role_name")
 	private Role role;
+		
+
+	@OneToMany(targetEntity = Bracelet.class, mappedBy = "utilisateur")
+	private List<Bracelet> bracelets;
 
 	public Utilisateur() {
 		super();
@@ -68,5 +75,15 @@ public class Utilisateur {
 	public void setRole(Role role) {
 		this.role = role;
 	}
+
+	public List<Bracelet> getBracelets() {
+		return bracelets;
+	}
+
+	public void setBracelets(List<Bracelet> bracelets) {
+		this.bracelets = bracelets;
+	}
+	
+	
 
 }

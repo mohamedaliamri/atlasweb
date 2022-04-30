@@ -1,9 +1,13 @@
 package atlasweb.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "jeux")
 public class Jeux {
 	
 	@Id
@@ -40,6 +44,13 @@ public class Jeux {
 	public void setPrix(String prix) {
 		this.prix = prix;
 	}
+
+	@Override
+	public String toString() {
+		return name + "  ";
+	}
+	
+	
     
     
 

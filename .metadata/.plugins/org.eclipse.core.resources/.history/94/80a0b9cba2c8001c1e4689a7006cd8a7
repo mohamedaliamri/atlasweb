@@ -1,0 +1,34 @@
+package atlasweb.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import atlasweb.conf.HibernateUtil;
+import atlasweb.model.Jeux;
+import atlasweb.model.Utilisateur;
+
+
+public class JeuxDao {
+	
+    @SuppressWarnings("unchecked")
+    public List < Jeux > getJeux(String name) {
+        Transaction transaction = null;
+        List < Jeux > listOfJeux= null;
+        try {
+        	Session session = atlasweb.conf.HibernateUtil.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+            String hql = "FROM Jeux E WHERE E.name ="+name;
+            listOfJeux = session.createQuery(hql).list();
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+		return listOfJeux.get(0);
+    }
+
+}

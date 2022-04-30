@@ -2,15 +2,21 @@ package atlasweb.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 
+@Entity
+@Table(name = "bracelet")
 public class Bracelet {
 
 	@Id
@@ -20,6 +26,10 @@ public class Bracelet {
 
 	@Column(name = "prenom")
 	private String prenom;
+	
+	@ManyToOne
+	@JoinColumn(name = "phonenumber")
+	private Utilisateur utilisateur;
 
 	@Column(name = "dateNaissance")
 	private Date dateNaissance;
@@ -31,13 +41,11 @@ public class Bracelet {
 	private double prix;
 	
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "BRACELET_JEUX", 
-             joinColumns = { 
-            		 @JoinColumn(name = "BRACELET_ID") }, 
-             inverseJoinColumns = {
-            		 @JoinColumn(name = "JEUX_ID") })
-	private ArrayList<Jeux> subjects = new ArrayList<>();
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="bracelet_jeux",
+	joinColumns=@JoinColumn(name="BRACELET_ID"),
+	inverseJoinColumns=@JoinColumn(name="jeux_id"))
+	private List<Jeux> jeux = new ArrayList<Jeux>();
 
 
 	public Integer getId() {
@@ -90,14 +98,27 @@ public class Bracelet {
 	}
 
 
-	public ArrayList<Jeux> getSubjects() {
-		return subjects;
+	public List<Jeux> getJeux() {
+		return jeux;
 	}
 
 
-	public void setSubjects(ArrayList<Jeux> subjects) {
-		this.subjects = subjects;
+	public void setJeux(List<Jeux> jeux) {
+		this.jeux = jeux;
 	}
+
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
+
+
 
 	
 	

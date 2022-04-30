@@ -26,7 +26,7 @@ public class SendSmsBasic {
                 phoneNumber,
                 code
         );
- 
+        System.out.println(bodyJson);
         MediaType mediaType = MediaType.parse(MEDIA_TYPE);
         RequestBody body = RequestBody.create(bodyJson, mediaType);
  

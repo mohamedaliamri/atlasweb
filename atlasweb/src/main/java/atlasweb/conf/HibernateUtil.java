@@ -8,6 +8,8 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
+import atlasweb.model.Bracelet;
+import atlasweb.model.Jeux;
 import atlasweb.model.Role;
 import atlasweb.model.Utilisateur;
 
@@ -35,7 +37,8 @@ public class HibernateUtil {
 
                 configuration.addAnnotatedClass(Utilisateur.class);
                 configuration.addAnnotatedClass(Role.class);
-                
+                configuration.addAnnotatedClass(Bracelet.class);
+                configuration.addAnnotatedClass(Jeux.class);
                 
                 ServiceRegistry serviceRegistry =  new ServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).buildServiceRegistry();

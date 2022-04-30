@@ -1,0 +1,29 @@
+package atlasweb.dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import atlasweb.conf.HibernateUtil;
+import atlasweb.model.Jeux;
+
+
+public class JeuxDao {
+
+	public Jeux getJeux(String name) {
+
+		Transaction transaction = null;
+		Jeux jeux = null;
+		try {
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			transaction = session.beginTransaction();
+			jeux = (Jeux) session.get(Jeux.class, name);
+			transaction.commit();
+		} catch (Exception e) {
+			if (transaction != null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}
+		return jeux;
+	}
+}

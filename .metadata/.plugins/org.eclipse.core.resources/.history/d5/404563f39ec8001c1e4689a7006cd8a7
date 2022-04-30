@@ -1,0 +1,35 @@
+package atlasweb.dao;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import atlasweb.conf.HibernateUtil;
+import atlasweb.model.Bracelet;
+import atlasweb.model.Jeux;
+import atlasweb.model.Utilisateur;
+import atlasweb.service.SendSmsBasic;
+
+public class BraceletDao {
+	
+	public void saveBracelet(Bracelet bracelet) {
+        Transaction transaction = null;
+        try {
+        	Session session = HibernateUtil.getSessionFactory().openSession();
+            transaction = session.beginTransaction();            
+            session.save(bracelet);
+            transaction.commit();
+            SendSmsBasic sms = new SendSmsBasic();
+            sms.sendSMS(bracelet.getUriliUtilisateur().getPhoneNumber(),"Bracelet : prix = " +bracelet.getPrix());
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+
+}
+

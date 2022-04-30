@@ -28,42 +28,7 @@ public class UtilisateurDao {
         }
     }
 
-  /* 
-    public void updateUser(Utilisateur user) {
-        Transaction transaction = null;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            transaction = session.beginTransaction();
-            session.update(user);
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        }
-    }
 
-    public void deleteUser(int id) {
-
-        Transaction transaction = null;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            transaction = session.beginTransaction();
-
-            Utilisateur user = session.get(Utilisateur.class, id);
-            if (user != null) {
-                session.delete(user);
-                System.out.println("user is deleted");
-            }
-
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        }
-    }
-*/
     public Utilisateur getUser(String phoneNumber) {
 
         Transaction transaction = null;

@@ -2,6 +2,9 @@ package atlasweb.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,8 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import atlasweb.dao.BraceletDao;
+import atlasweb.dao.JeuxDao;
 import atlasweb.dao.RoleDao;
 import atlasweb.dao.UtilisateurDao;
+import atlasweb.model.Bracelet;
+import atlasweb.model.Jeux;
 import atlasweb.model.Role;
 import atlasweb.model.Utilisateur;
 
@@ -26,10 +33,15 @@ public class UtilisateurServlet extends HttpServlet {
 	private static final String url_acceuil = url_app + "/dashboard.jsp";
 	private UtilisateurDao userDao;
 	private RoleDao roleDao;
+	private JeuxDao jeuxDao;
+	private BraceletDao braceletDao;
 
 	public void init() {
 		userDao = new UtilisateurDao();
 		roleDao = new RoleDao();
+		jeuxDao = new JeuxDao();
+		braceletDao = new BraceletDao();
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -55,6 +67,7 @@ public class UtilisateurServlet extends HttpServlet {
 			System.out.println(utilisateur.getCode());
 			System.out.println(codeCnx);
 			if (utilisateur != null && utilisateur.getCode().equals(codeCnx)) {
+				session.setAttribute("phoneNomberUtilisateur", utilisateur.getPhoneNumber());
 				response.sendRedirect(url_acceuil);
 			} else {
 				// Authentification
@@ -62,31 +75,47 @@ public class UtilisateurServlet extends HttpServlet {
 				response.sendRedirect(url_login);
 			}
 		} else if ("acheterBracelet".equals(method)) {
+			Bracelet bracelet = new Bracelet();
 			String prenom = request.getParameter("prenom");
 			String dateDeNaissance = request.getParameter("dateDeNaissance");
 			String moins1metre = request.getParameter("flexRadioDefault");
 			String plus1metre = request.getParameter("flexRadioDefault2");
 			if (prenom != null && dateDeNaissance != null) {
+				bracelet.setPrenom(prenom);
+				try {
+					bracelet.setDateNaissance(new SimpleDateFormat("yyyy-mm-dd").parse(dateDeNaissance));
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				System.out.println("prenom" + prenom);
 				System.out.println("dateDeNaissance" + dateDeNaissance);
 				int i = 0;
 				double prix = 0;
+				List<Jeux> jeuList = new ArrayList<Jeux>();
 				if (moins1metre != null) {
+					bracelet.setTypeBracelet("moins1metre");
 					System.out.println("moins1metre " + moins1metre);
 					String bleu1 = request.getParameter("bleu1");
 					if (bleu1 != null) {
 						System.out.println("bleu1" + bleu1);
 						i++;
+						Jeux jeux = jeuxDao.getJeux("parc bleu");
+						jeuList.add(jeux);
 					}
 					String vert1 = request.getParameter("vert1");
 					if (vert1 != null) {
 						System.out.println("vert1 " + vert1);
 						i++;
+						Jeux jeux = jeuxDao.getJeux("parc vert");
+						jeuList.add(jeux);
 					}
 					String jaune1 = request.getParameter("jaune1");
 					if (jaune1 != null) {
 						System.out.println("jaune1 " + jaune1);
 						i++;
+						Jeux jeux = jeuxDao.getJeux("parc jaune");
+						jeuList.add(jeux);
 					}
 					String chaussete = request.getParameter("flexRadioDefaultT");
 					if (chaussete != null) {
@@ -120,31 +149,42 @@ public class UtilisateurServlet extends HttpServlet {
 
 				} else if (plus1metre != null) {
 					System.out.println("plus1metre" + plus1metre);
+					bracelet.setTypeBracelet("plus1metre");
 					String bleu2 = request.getParameter("bleu2");
 					int j = 0;
 					if (bleu2 != null) {
 						System.out.println("bleu2" + bleu2);
 						j++;
+						Jeux jeux = jeuxDao.getJeux("parc bleu");
+						jeuList.add(jeux);
 					}
 					String vert2 = request.getParameter("vert2");
 					if (vert2 != null) {
 						System.out.println("vert2" + vert2);
 						j++;
+						Jeux jeux = jeuxDao.getJeux("parc vert");
+						jeuList.add(jeux);
 					}
 					String jaune2 = request.getParameter("jaune2");
 					if (jaune2 != null) {
 						System.out.println("jaune2 " + jaune2);
 						j++;
+						Jeux jeux = jeuxDao.getJeux("parc jaune");
+						jeuList.add(jeux);
 					}
 					String rouge2 = request.getParameter("rouge2");
 					if (rouge2 != null) {
 						System.out.println("rouge2" + rouge2);
 						j++;
+						Jeux jeux = jeuxDao.getJeux("parc rouge");
+						jeuList.add(jeux);
 					}
 					String orange2 = request.getParameter("orange2");
 					if (orange2 != null) {
 						System.out.println("orange2 " + orange2);
 						j++;
+						Jeux jeux = jeuxDao.getJeux("parc orange");
+						jeuList.add(jeux);
 					}
 					String chaussete = request.getParameter("flexRadioDefaultT");
 					if (chaussete != null) {
@@ -212,6 +252,12 @@ public class UtilisateurServlet extends HttpServlet {
 						}
 					}
 				}
+				bracelet.setJeux(jeuList);
+				bracelet.setPrix(prix);
+				String phoneNumber = (String) session.getAttribute("phoneNomberUtilisateur");
+				
+				bracelet.setUtilisateur(userDao.getUser(phoneNumber));
+				braceletDao.saveBracelet(bracelet);
 				response.sendRedirect(url_acceuil);
 			}
 
@@ -232,11 +278,18 @@ public class UtilisateurServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String action = request.getServletPath();
-		List<Utilisateur> listUser = userDao.getAllUser();
-		listUser.forEach(obj -> {
-			System.out.println(obj.getRole());
-		});
+	//	http://localhost:8080/atlasweb/add?signout
+	    String method = request.getParameter("method");
+		if("signout".equals(method)) {
+			response.sendRedirect(url_login);
+		}else {
+			HttpSession session = request.getSession();
+			List<Bracelet> bracelets = braceletDao.getAllBracelet();
+			session.setAttribute("bracelets", bracelets);
+			System.out.println("Here");
+			response.sendRedirect(url_app + "/tables.jsp");
+		}
+		
 	}
 
 	private void listUser(HttpServletRequest request, HttpServletResponse response)
