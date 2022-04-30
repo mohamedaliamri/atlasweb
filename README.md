@@ -45,14 +45,5 @@ INSERT INTO `utilisateur` (`phonenumber`, `code`, `name`, `role_name`) VALUES
 
 
 
-DROP TABLE IF EXISTS `utilisatuer`;
 
-CREATE TABLE IF NOT EXISTS `utilisatuer` (
-  `phonenumber` varchar(255) NOT NULL,
-  `code` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `role` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`phonenumber`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-COMMIT;
 
