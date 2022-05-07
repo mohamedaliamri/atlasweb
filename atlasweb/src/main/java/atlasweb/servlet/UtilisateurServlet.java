@@ -1,5 +1,6 @@
 package atlasweb.servlet;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -15,6 +16,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import atlasweb.dao.BraceletDao;
 import atlasweb.dao.JeuxDao;
 import atlasweb.dao.RoleDao;
@@ -23,6 +27,7 @@ import atlasweb.model.Bracelet;
 import atlasweb.model.Jeux;
 import atlasweb.model.Role;
 import atlasweb.model.Utilisateur;
+import atlasweb.service.FirstPdf;
 
 @WebServlet(name = "utilisateurServlet")
 public class UtilisateurServlet extends HttpServlet {
@@ -36,11 +41,13 @@ public class UtilisateurServlet extends HttpServlet {
 	private JeuxDao jeuxDao;
 	private BraceletDao braceletDao;
 
+
 	public void init() {
 		userDao = new UtilisateurDao();
 		roleDao = new RoleDao();
 		jeuxDao = new JeuxDao();
 		braceletDao = new BraceletDao();
+		
 		
 	}
 
@@ -258,6 +265,7 @@ public class UtilisateurServlet extends HttpServlet {
 				
 				bracelet.setUtilisateur(userDao.getUser(phoneNumber));
 				braceletDao.saveBracelet(bracelet);
+				
 				response.sendRedirect(url_acceuil);
 			}
 

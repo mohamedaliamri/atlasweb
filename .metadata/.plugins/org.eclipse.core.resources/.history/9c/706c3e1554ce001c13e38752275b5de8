@@ -1,0 +1,22 @@
+package atlasweb;
+
+import java.awt.image.BufferedImage;
+
+import net.sourceforge.barbecue.Barcode;
+import net.sourceforge.barbecue.BarcodeFactory;
+import net.sourceforge.barbecue.BarcodeImageHandler;
+
+public class Test {
+
+	public static void main(String[] args) throws Exception {
+		generateEAN13BarcodeImage("132634634636436");
+
+	}
+	  public  static BufferedImage generateEAN13BarcodeImage(String barcodeText) throws Exception {
+	    	System.out.println(">> "+barcodeText);
+	        Barcode barcode = BarcodeFactory.createEAN13(barcodeText);
+	    //    barcode.setFont(BARCODE_TEXT_FONT);
+
+	        return BarcodeImageHandler.getImage(barcode);
+	    }
+}

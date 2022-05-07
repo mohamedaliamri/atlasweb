@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import atlasweb.conf.HibernateUtil;
 import atlasweb.model.Bracelet;
 import atlasweb.model.Utilisateur;
+import atlasweb.service.FirstPdf;
 import atlasweb.service.SendSmsBasic;
 
 public class BraceletDao {
@@ -21,6 +22,8 @@ public class BraceletDao {
 			transaction.commit();
 			SendSmsBasic sms = new SendSmsBasic();
 			sms.sendSMS(bracelet.getUtilisateur().getPhoneNumber(), "Bracelet : prix = " + bracelet.getPrix());
+			FirstPdf firstPdf = new FirstPdf();
+			firstPdf.generatePdf(bracelet);
 		} catch (Exception e) {
 			System.out.println(">>> "+e.getMessage());
 			if (transaction != null) {

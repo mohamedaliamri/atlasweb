@@ -118,5 +118,7 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/mhdal/Downloads/jar_files (4)/barbecue-1.5-beta1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/mhdal/Downloads/jar_files (6)/itextpdf-5.5.13.3.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
